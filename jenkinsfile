@@ -38,6 +38,18 @@ pipeline {
         
       }
     }
+    stage("code review to check quality of code"){
+            steps{
+                sh "mvn pmd:pmd"
+                echo 'code review done'
+            }
+        }
+        stage("convert the code to package"){
+            steps{
+                sh "mvn clean package"
+                echo 'convert the files to war file'
+            }
+        }
     
     stage ('SAST') {
       steps {
