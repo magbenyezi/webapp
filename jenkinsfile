@@ -12,12 +12,17 @@ pipeline {
             ''' 
       }
     }
-    stage ('Build'){
+    stage ('Great'){
       steps{
         sh '''
                     echo "Hello World!"
                   
             ''' 
+        }
+    }
+     stage ('Build'){
+      steps{
+        sh 'mvn clean package'
         }
     }
   }
