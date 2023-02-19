@@ -46,7 +46,7 @@ pipeline {
         }
         stage("convert the code to package"){
             steps{
-                sh "mvn clean package"
+                sh "mvn clean install"
                 echo 'convert the files to war file'
             }
         }
